@@ -1,0 +1,34 @@
+{
+  "name": "fragments-ui",
+  "source": "src/index.html",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Client for testing Fragments microservice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cychu42/fragments-ui.git"
+  },
+  "keywords": [],
+  "author": "Chen-Yuan Chu <cchu42@myseneca.ca>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/cychu42/fragments-ui/issues"
+  },
+  "homepage": "https://github.com/cychu42/fragments-ui#readme",
+  "devDependencies": {
+    "buffer": "^5.7.1",
+    "parcel": "^2.8.3",
+    "process": "^0.11.10",
+    "punycode": "^1.4.1",
+    "querystring-es3": "^0.2.1"
+  },
+  "dependencies": {
+    "aws-amplify": "^5.0.11"
+  }
+}

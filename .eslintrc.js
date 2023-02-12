@@ -14,7 +14,7 @@ module.exports = {
     },
     "rules": {
     },
-    // "ignorePatterns": [
-    //     "**/*.html"
-    //   ]
+    "plugins": [
+        "html"
+    ]
 }

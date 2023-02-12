@@ -1,0 +1,20 @@
+# output
+dist
+
+# others
+.parcel-cache
+node_modules
+.gitignore
+package-lock.json
+package.json
+
+# prettier
+.prettierrc.js
+.prettierignore
+
+# ESLinter
+.eslintrc.js
+.eslintignore
+
+# setting
+.vscode

@@ -1,5 +1,5 @@
 import { Auth, getUser } from './auth';
-import { getUserFragments } from './api';
+import { getUserFragments, postFragment } from './api';
 
 async function init() {
   // Get our UI elements
@@ -38,6 +38,8 @@ async function init() {
 
   // Disable the Login button
   loginBtn.disabled = true;
+
+  await postFragment(user, 'This is a fragment', 'text/plain');
 
   // Do an authenticated request to the fragments API server and log the result
   getUserFragments(user);

@@ -4,7 +4,6 @@
   "private": true,
   "version": "0.0.1",
   "description": "Client for testing Fragments microservice",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel",

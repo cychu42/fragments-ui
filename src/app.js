@@ -6,6 +6,7 @@ async function init() {
   const userSection = document.querySelector('#user');
   const loginBtn = document.querySelector('#login');
   const logoutBtn = document.querySelector('#logout');
+  const submitBtn = document.querySelector('#post');
 
   // Wire up event handlers to deal with login and logout.
   loginBtn.onclick = () => {
@@ -39,10 +40,18 @@ async function init() {
   // Disable the Login button
   loginBtn.disabled = true;
 
-  await postFragment(user, 'This is a fragment', 'text/plain');
+  // Handle post button click
+  submitBtn.onclick = async () => {
+    const text = document.getElementById('textSent').value;
+    const type = document.getElementById('type').value;
 
-  // Do an authenticated request to the fragments API server and log the result
-  getUserFragments(user);
+    // post request to create a fragment
+    await postFragment(user, text, type);
+
+    // Do an authenticated request to the fragments API server and log the result
+    // Log user's existing fragments' metadata
+    await getUserFragments(user);
+  };
 }
 
 // Wait for the DOM to be ready, then start the app

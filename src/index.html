@@ -13,13 +13,30 @@
     </section>
     <section hidden id="user">
       <h2>Hello <span class="username"></span>!</h2>
+      <p>
+        This is a website for develpment and testing a running Fragments Microservice. <br />
+        You can post, get, update, and delete fragments by clicking filling relevant information and
+        the buttons. Result section will show the response from Fragments. <br />
+        You can also find more information in console log, if you need them.
+      </p>
       <br />
+      <h3>Post</h3>
+      <div>
+        <label for="postText">Text:</label><br />
+        <input type="text" id="postText" name="postText" value="This is a fragment." /><br /><br />
+        <label for="postType">Content-Type:</label><br />
+        <input type="text" id="postType" name="postType" value="text/plain" /><br /><br />
+        <button id="post">Post a Fragment</button>
+      </div>
+      <h3>Get</h3>
+      <button id="get">Get List of Existing Fragments</button>
+      <h3>Delete</h3>
+      <label for="deleteId">ID of the fragment:</label><br />
+      <input type="text" id="deleteId" name="deleteId" value="text/plain" /><br /><br />
+      <button id="delete">Delete the Fragment</button>
 
-      <label for="textSent">Text:</label><br />
-      <input type="text" id="textSent" name="textSent" value="This is a fragment." /><br /><br />
-      <label for="type">Content-Type:</label><br />
-      <input type="text" id="type" name="type" value="text/plain" /><br /><br />
-      <button id="post">post</button>
+      <h3>Result:</h3>
+      <p id="result"></p>
     </section>
   </body>
 </html>

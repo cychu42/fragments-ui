@@ -1,13 +1,14 @@
 import { Auth, getUser } from './auth';
-import { getUserFragments, postFragment } from './api';
+import { getUserFragments, postFragment, deleteFragment } from './api';
 
 async function init() {
   // Get our UI elements
   const userSection = document.querySelector('#user');
   const loginBtn = document.querySelector('#login');
   const logoutBtn = document.querySelector('#logout');
-  const submitBtn = document.querySelector('#post');
-
+  const postBtn = document.querySelector('#post');
+  const getBtn = document.querySelector('#get');
+  const deleteBtn = document.querySelector('#delete');
   // Wire up event handlers to deal with login and logout.
   loginBtn.onclick = () => {
     // Sign-in via the Amazon Cognito Hosted UI (requires redirects), see:
@@ -41,16 +42,26 @@ async function init() {
   loginBtn.disabled = true;
 
   // Handle post button click
-  submitBtn.onclick = async () => {
-    const text = document.getElementById('textSent').value;
-    const type = document.getElementById('type').value;
+  postBtn.onclick = async () => {
+    const text = document.getElementById('postText').value;
+    const type = document.getElementById('postType').value;
 
     // post request to create a fragment
-    await postFragment(user, text, type);
+    document.getElementById('result').innerHTML = await postFragment(user, text, type);
+  };
 
-    // Do an authenticated request to the fragments API server and log the result
-    // Log user's existing fragments' metadata
-    await getUserFragments(user);
+  //  Handle get button click
+  getBtn.onclick = async () => {
+    // Do an authenticated request to the fragments API server and get the result
+    // Get user's existing fragments' metadata
+    document.getElementById('result').innerHTML = await getUserFragments(user);
+  };
+
+  //  Handle get button click
+  deleteBtn.onclick = async () => {
+    const id = document.getElementById('deleteId').value;
+    // Do an authenticated request to the fragments API server and get the result
+    document.getElementById('result').innerHTML = await deleteFragment(user, id);
   };
 }
 

@@ -18,7 +18,7 @@ export async function getUserFragments(user) {
     }
     const data = await res.json();
     console.log('Got user fragments data', { data });
-    return data;
+    return JSON.stringify(data);
   } catch (err) {
     console.error('Unable to call GET /v1/fragment', { err });
     return err;
@@ -40,7 +40,7 @@ export async function postFragment(user, fragmentData, type) {
     }
     const data = await res.json();
     console.log('Got the user fragment data back after POST', { data });
-    return data;
+    return JSON.stringify(data);
   } catch (err) {
     console.error('Unable to call POST /v1/fragments', { err });
     return err;
@@ -62,7 +62,7 @@ export async function deleteFragment(user, id) {
     const data = await res.json();
 
     console.log('Got the user fragment data back after POST', { data });
-    return data;
+    return JSON.stringify(data);
   } catch (err) {
     console.error('Unable to call POST /v1/fragments', { err });
     return err;

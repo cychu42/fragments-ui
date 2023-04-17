@@ -1,5 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      border-style: solid;
+    }
+    .row:after {
+      content: '';
+      display: table;
+      clear: both;
+    }.column2{
+      float: left;
+      width: 100%;
+      padding: 10px;
+      border-style: solid;
+    }
+  </style>
   <head>
     <meta charset="utf-8" />
     <title>Fragments UI</title>
@@ -15,28 +36,81 @@
       <h2>Hello <span class="username"></span>!</h2>
       <p>
         This is a website for develpment and testing a running Fragments Microservice. <br />
-        You can post, get, update, and delete fragments by clicking filling relevant information and
-        the buttons. Result section will show the response from Fragments. <br />
-        You can also find more information in console log, if you need them.
+        You can post, get, update, and delete fragments by filling relevant information and clicking
+        the buttons. Result section will show the response from Fragments. You can also find more
+        information in console log, if you need them.
       </p>
-      <br />
-      <h3>Post</h3>
-      <div>
-        <label for="postText">Text:</label><br />
-        <input type="text" id="postText" name="postText" value="This is a fragment." /><br /><br />
-        <label for="postType">Content-Type:</label><br />
-        <input type="text" id="postType" name="postType" value="text/plain" /><br /><br />
-        <button id="post">Post a Fragment</button>
-      </div>
-      <h3>Get</h3>
-      <button id="get">Get List of Existing Fragments</button>
-      <h3>Delete</h3>
-      <label for="deleteId">ID of the fragment:</label><br />
-      <input type="text" id="deleteId" name="deleteId" value="text/plain" /><br /><br />
-      <button id="delete">Delete the Fragment</button>
 
       <h3>Result:</h3>
       <p id="result"></p>
+
+      <br />
+      <div class="row">
+        <div class="column">
+          <h3>Post</h3>
+          <div>
+            <label for="postText">Text or JSON:</label>
+            <input
+              type="text"
+              id="postText"
+              name="postText"
+              value="This is a fragment."
+            /><br /><br />
+            <label for="postType">Content-Type:</label>
+            <input type="text" id="postType" name="postType" value="text/plain" /><br /><br />
+            <label for="postImg">Image:</label>
+            <input
+              type="file"
+              id="postImg"
+              name="postImg"
+              accept="image/png, image/jpeg, image/webp, image/gif"
+            /><br /><br />
+            <button id="postTextBtn">Post a text or JSON fragment</button>
+            <hr />
+            <button id="postImgBtn">Post an image fragment</button>
+          </div>
+        </div>
+        <div class="column">
+          <h3>Get</h3>
+          <label for="getId">ID of the fragment:</label>
+          <input type="text" id="getId" name="geteId" /><br /><br />
+          <button id="getByIdBtn">Get the fragment data of that ID</button>
+          <hr />
+          <button id="getBtn">Get a list of existing fragments</button>
+          <h3>Delete</h3>
+          <label for="deleteId">ID of the fragment:</label>
+          <input type="text" id="deleteId" name="deleteId" /><br /><br />
+          <button id="deleteBtn">Delete the fragment</button>
+        </div>
+      </div>
+      <div class="column2">
+        <h3>Update</h3>
+        <div>
+          <label for="updateText">Text or JSON:</label>
+          <input
+            type="text"
+            id="updateText"
+            name="updateText"
+            value="This is a fragment."
+          /><br /><br />
+          <label for="updateType">Content-Type:</label>
+          <input type="text" id="updateType" name="updateType" value="text/plain" /><br /><br />
+          <label for="postImg">Image:</label>
+          <input
+            type="file"
+            id="updateImg"
+            name="updateImg"
+            accept="image/png, image/jpeg, image/webp, image/gif"
+          /><br /><br />
+          <label for="updateId">ID of the fragment:</label>
+          <input type="text" id="updateId" name="updateId" /><br /><br />
+          <button id="updateTextBtn">Update data of a text or JSON fragment</button>
+          <hr />
+          <button id="updateImgBtn">Update data of an image fragment</button>
+        </div>
+      </div>
+
+    </div>
     </section>
   </body>
 </html>

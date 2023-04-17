@@ -58,7 +58,7 @@ export async function getByIdFragments(user, id) {
 
       // Create image element and set the src
       const img = document.createElement('img');
-      img.src = url.split('blob:')[1];
+      img.src = url;
 
       // Clear, append the img element, and clean up if needed.
       const showImg = document.getElementById('result');
